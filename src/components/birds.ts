@@ -6,9 +6,9 @@ export class Birds {
         const loader = new GLTFLoader();
 
         const [parrotData, flamingoData, storkData] = await Promise.all([
-            loader.loadAsync("/models/Parrot.glb"),
-            loader.loadAsync("/models/Flamingo.glb"),
-            loader.loadAsync("/models/Stork.glb"),
+            loader.loadAsync("./models/Parrot.glb"),
+            loader.loadAsync("./models/Flamingo.glb"),
+            loader.loadAsync("./models/Stork.glb"),
         ]);
 
         const parrot = this.setupModel(parrotData);
