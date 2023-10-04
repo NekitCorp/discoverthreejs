@@ -9,6 +9,8 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-22.04
+        env:
+            REPOSITORY_NAME: ${{ github.event.repository.name }}
         permissions:
             contents: write
         concurrency:
