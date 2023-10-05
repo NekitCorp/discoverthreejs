@@ -43,6 +43,7 @@ export class MeshGroup extends Group implements IUpdatable {
 
         // every sphere inside the group will be scaled
         this.scale.multiplyScalar(2);
+        this.position.set(-4, 0, 4);
     }
 
     public tick(delta: number) {

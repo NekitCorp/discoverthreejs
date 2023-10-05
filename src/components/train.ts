@@ -28,6 +28,8 @@ export class Train extends Group implements IUpdatable {
             this.meshes.smallWheelFront,
             this.meshes.bigWheel
         );
+
+        this.position.set(2, 0, -4);
     }
 
     public tick(delta: number) {

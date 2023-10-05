@@ -10,7 +10,7 @@ export class Camera extends PerspectiveCamera implements IUpdatable {
     constructor() {
         super(35, 1, 0.1, 100);
 
-        this.position.set(-1.5, 1.5, 6.5);
+        this.position.set(-7, 7, 14);
     }
 
     public tick(delta: number) {

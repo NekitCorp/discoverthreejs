@@ -12,7 +12,7 @@ export class Controls extends OrbitControls implements IUpdatable {
         // this.maxDistance = 20;
     }
 
-    public tick() {
-        this.update();
+    public tick(delta: number) {
+        this.update(delta);
     }
 }

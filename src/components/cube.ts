@@ -6,6 +6,7 @@ export class Cube extends Mesh implements IUpdatable {
     constructor() {
         super(new BoxGeometry(2, 2, 2), Cube.createMaterial());
 
+        this.position.set(4, 0, 4);
         this.rotation.set(-0.5, -0.1, 0.8);
     }
 
