@@ -18,7 +18,7 @@ export class Cube extends Mesh implements IUpdatable {
 
     private static createMaterial() {
         const textureLoader = new TextureLoader();
-        const texture = textureLoader.load("/uv-test-col.png");
+        const texture = textureLoader.load("./uv-test-col.png");
 
         const material = new MeshStandardMaterial({ map: texture });
 
