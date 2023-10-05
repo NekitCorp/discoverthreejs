@@ -1,3 +1,4 @@
+import { DirectionalLightHelper } from "three";
 import { Birds } from "./components/birds";
 import { Cube } from "./components/cube";
 import { MeshGroup } from "./components/mesh-group";
@@ -10,6 +11,7 @@ import {
     Renderer,
     Resizer,
     Scene,
+    Stats,
     createAxesHelper,
     createGridHelper,
 } from "./systems";
@@ -25,15 +27,18 @@ export class World {
     constructor(container: Element) {
         container.append(this.renderer.domElement);
 
+        const stats = new Stats();
+        container.appendChild(stats.dom);
+
         const train = new Train();
         const cube = new Cube();
         const meshGroup = new MeshGroup();
 
-        this.loop.updatables.push(this.controls, train, cube, meshGroup);
+        this.loop.updatables.push(this.controls, train, cube, meshGroup, stats);
 
         this.scene.add(
             this.lights.hemisphereLight,
-            this.lights.directionalLight,
+            new DirectionalLightHelper(this.lights.directionalLight),
             train,
             cube,
             meshGroup
